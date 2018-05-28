@@ -1,0 +1,1141 @@
+<!--新闻-->
+{{#if_path_news category.path}}
+    <div class="news_content ">
+        <div class="news_box">
+            <div class="new_main carousel_change">
+                <ul class="tab_tlt">
+                    <li class='active'>官方新闻</li>
+                    <li>媒体报道</li>
+                    <li>行业资讯</li>
+                </ul>
+
+                <!--切换按钮--箭头-->
+                <div class="news_arrow">
+                    <a class="carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev"></a>
+                    <a class="carousel-control turnr" href="#carousel-example-generic1" role="button"
+                       data-slide="next"></a>
+                </div>
+                <div class="news_arrow" style="display: none">
+                    <a class="carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev"></a>
+                    <a class="carousel-control turnr" href="#carousel-example-generic2" role="button"
+                       data-slide="next"></a>
+                </div>
+                <div class="news_arrow" style="display: none">
+                    <a class="carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev"></a>
+                    <a class="carousel-control turnr" href="#carousel-example-generic3" role="button"
+                       data-slide="next"></a>
+                </div>
+
+                <!--新闻列表-->
+
+                <!--新闻列表-官方新闻-->
+                <div id="carousel-example-generic1" class="news_carousel carousel slide">
+                    <!--data-ride="carousel"-->
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {{#foreach list.a}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic1" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic1" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner news_lists" role="listbox">
+                        {{#foreach list.a}}
+                            {{#if_arr_first this}}
+                            <ul class="item active">
+                            {{else}}
+                            <ul class="item">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class='row' style="padding-bottom: 30px;">
+                                    <a href="{{url}}" target="_blank" style="color: #fff;">
+                                        <div class="col-xs-8">
+                                            <h4>{{title}}</h4>
+                                            <p class='news_tips'>
+                                                <span>{{dateformat date format="YYYY年MM月DD日 HH:mm"}}</span>
+                                                <span>阅读量 {{reading.total}}</span>
+                                                <span>喜欢 1</span>
+                                            </p>
+                                            <p class='news_text'>{{abstract}}</p>
+                                            <p class='more_text'>了解更多</p>
+                                        </div>
+                                        <div class="col-xs-4"><img src="{{thumbnail.src}}" alt=""></div>
+                                    </a>
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </div>
+                    <!-- Controls -->
+
+                </div>
+                <!--新闻列表-媒体报道-->
+                <div id="carousel-example-generic2" class="news_carousel carousel slide" style="display:none;">
+                    <!--data-ride="carousel"-->
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {{#foreach list.b}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic2" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic2" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner news_lists" role="listbox">
+                        {{#foreach list.b}}
+                            {{#if_arr_first this}}
+                            <ul class="item active">
+                            {{else}}
+                            <ul class="item">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class='row' style="padding-bottom: 30px;">
+                                    <!--<a href="{{url}}" target="_blank" style="color: #fff;">-->
+                                    <div class="col-xs-8">
+                                        <h4>{{title}}</h4>
+                                        <p class='news_tips'>
+                                            <span>{{dateformat date format="YYYY年MM月DD日 HH:mm"}}</span>
+                                            <span>阅读量 {{reading.total}}</span>
+                                            <span>喜欢 1</span>
+                                        </p>
+                                        <p class='news_text'>{{abstract}}</p>
+                                        <p class='more_text'>了解更多</p>
+                                    </div>
+                                    <div class="col-xs-4"><img src="{{thumbnail.src}}" alt=""></div>
+                                    <!--</a>-->
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+
+                    </div>
+                    <!-- Controls -->
+
+                </div>
+                <!--新闻列表-行业资讯-->
+                <div id="carousel-example-generic3" class="news_carousel carousel slide" style="display:none;">
+                    <!--data-ride="carousel"-->
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {{#foreach list.c}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic3" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic3" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner news_lists" role="listbox">
+                        {{#foreach list.c}}
+                            {{#if_arr_first this}}
+                            <ul class="item active">
+                            {{else}}
+                            <ul class="item">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class='row' style="padding-bottom: 30px;">
+                                    <!--<a href="{{url}}" target="_blank" style="color: #fff;">-->
+                                    <div class="col-xs-8">
+                                        <h4>{{title}}</h4>
+                                        <p class='news_tips'>
+                                            <span>{{dateformat date format="YYYY年MM月DD日 HH:mm"}}</span>
+                                            <span>阅读量 {{reading.total}}</span>
+                                            <span>喜欢 1</span>
+                                        </p>
+                                        <p class='news_text'>{{abstract}}</p>
+                                        <p class='more_text'>了解更多</p>
+                                    </div>
+                                    <div class="col-xs-4"><img src="{{thumbnail.src}}" alt=""></div>
+                                    <!--</a>-->
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+
+                    </div>
+                    <!-- Controls -->
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+{{/if_path_news}}
+
+<!--素材页-->
+{{#if_path_material category.path}}
+    <div class="news_content material_content small_img">
+        <div class="news_box">
+            <div class="new_main carousel_change">
+                <ul class="tab_tlt">
+                    <li class='active'>品牌宣传</li>
+                    <li>成分技术</li>
+                    <li>价格功效</li>
+                    <li>代理招募</li>
+                </ul>
+                <!--切换按钮--箭头-->
+                <div class="material_arrow">
+                    <a class=" carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev">
+                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    </a>
+                    <a class=" carousel-control turnr" href="#carousel-example-generic4" role="button"
+                       data-slide="next">
+                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    </a>
+                </div>
+                <div class="material_arrow" style="display: none;">
+                    <a class=" carousel-control" href="#carousel-example-generic5" role="button" data-slide="prev">
+                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    </a>
+                    <a class=" carousel-control turnr" href="#carousel-example-generic5" role="button"
+                       data-slide="next">
+                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    </a>
+                </div>
+                <div class="material_arrow" style="display: none;">
+                    <a class=" carousel-control" href="#carousel-example-generic6" role="button" data-slide="prev">
+                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    </a>
+                    <a class=" carousel-control turnr" href="#carousel-example-generic6" role="button"
+                       data-slide="next">
+                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    </a>
+                </div>
+                <div class="material_arrow" style="display: none;">
+                    <a class=" carousel-control" href="#carousel-example-generic7" role="button" data-slide="prev">
+                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    </a>
+                    <a class=" carousel-control turnr" href="#carousel-example-generic7" role="button"
+                       data-slide="next">
+                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    </a>
+                </div>
+
+                <!--素材列表-->
+                <!--素材列表-品牌宣传-->
+                <div id="carousel-example-generic4" class="small_img1 newscarousel carousel slide">
+                    <!--data-ride="carousel"-->
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {{#foreach list.d}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic4" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic4" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner fodder_lists" role="listbox">
+                        {{#foreach list.d}}
+                            {{#if_arr_first this}}
+                            <ul class="item active row">
+                            {{else}}
+                            <ul class="item row">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class="col-xs-4 col-sm-2 col-md-2">
+                                    <img src="{{imgSrc}}" alt="">
+                                    <div>
+                                        <p class="to-big1" data-number="{{@index}}">产品展示
+                                            <a href="{{imgSrc}}" download='img'></a>
+                                        </p>
+                                    </div>
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </div>
+
+                    <!-- Controls -->
+
+                </div>
+                <!--素材列表-成分技术-->
+                <div id="carousel-example-generic5" class="small_img2 newscarousel carousel slide"
+                     style="display: none">
+                    <ol class="carousel-indicators">
+                        {{#foreach list.e}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic5" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic5" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner fodder_lists" role="listbox">
+                        {{#foreach list.e}}
+                            {{#if_arr_first this}}
+                            <ul class="item active row">
+                            {{else}}
+                            <ul class="item row">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class="col-xs-4 col-sm-2 col-md-2">
+                                    <img src="{{imgSrc}}" alt="">
+                                    <div>
+                                        <p class="to-big2">产品展示
+                                            <a href="{{imgSrc}}" download='img'></a>
+                                        </p>
+                                    </div>
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                <!--素材列表-价格功效-->
+                <div id="carousel-example-generic6" class="small_img3 newscarousel carousel slide"
+                     style="display: none">
+                    <ol class="carousel-indicators">
+                        {{#foreach list.f}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic6" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic6" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner fodder_lists" role="listbox">
+                        {{#foreach list.f}}
+                            {{#if_arr_first this}}
+                            <ul class="item active row">
+                            {{else}}
+                            <ul class="item row">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class="col-xs-4 col-sm-2 col-md-2">
+                                    <img src="{{imgSrc}}" alt="">
+                                    <div>
+                                        <p class="to-big3">产品展示
+                                            <a href="{{imgSrc}}" download='img'></a>
+                                        </p>
+                                    </div>
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                <!--素材列表-代理招募-->
+                <div id="carousel-example-generic7" class="small_img4 newscarousel carousel slide"
+                     style="display: none">
+                    <ol class="carousel-indicators">
+                        {{#foreach list.g}}
+                            {{#if_arr_first this}}
+                                <li data-target="#carousel-example-generic7" data-slide-to="{{@index}}"
+                                    class="active"></li>
+                            {{else}}
+                                <li data-target="#carousel-example-generic7" data-slide-to="{{@index}}"></li>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner fodder_lists" role="listbox">
+                        {{#foreach list.g}}
+                            {{#if_arr_first this}}
+                            <ul class="item active row">
+                            {{else}}
+                            <ul class="item row">
+                            {{/if_arr_first}}
+                            {{#foreach this}}
+                                <li class="col-xs-4 col-sm-2 col-md-2">
+                                    <img src="{{imgSrc}}" alt="">
+                                    <div>
+                                        <p class="to-big4">产品展示
+                                            <a href="{{imgSrc}}" download='img'></a>
+                                        </p>
+                                    </div>
+                                </li>
+                            {{/foreach}}
+
+                            {{#if_arr_first this}}
+                            </ul>
+                            {{else}}
+                            </ul>
+                            {{/if_arr_first}}
+                        {{/foreach}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news_content big_img">
+        <div class="fodder_big_box">
+            <ul class='big_fodder_tab'>
+                <li class='active'>品牌宣传</li>
+                <li>成分技术</li>
+                <li>价格功效</li>
+                <li>代理招募</li>
+            </ul>
+            <div class="banner_box">
+                <div class="swiper-container swiper-container1">
+                    <div class="swiper-wrapper">
+                        {{#foreach materialItemList.d}}
+                            <div class="swiper-slide ">
+                                <img src="{{imgSrc}}" alt="">
+                                <a href="{{imgSrc}}" download='img'></a>
+                                <span></span>
+                            </div>
+                        {{/foreach}}
+                    </div>
+
+                </div>
+
+                <div class="swiper-container swiper-container2">
+                    <div class="swiper-wrapper">
+                        {{#foreach materialItemList.e}}
+                            <div class="swiper-slide ">
+                                <img src="{{imgSrc}}" alt="">
+                                <a href="{{imgSrc}}" download='img'></a>
+                                <span></span>
+                            </div>
+                        {{/foreach}}
+                    </div>
+
+                </div>
+
+                <div class="swiper-container swiper-container3">
+                    <div class="swiper-wrapper">
+                        {{#foreach materialItemList.f}}
+                            <div class="swiper-slide ">
+                                <img src="{{imgSrc}}" alt="">
+                                <a href="{{imgSrc}}" download='img'></a>
+                                <span></span>
+                            </div>
+                        {{/foreach}}
+                    </div>
+
+                </div>
+
+                <div class="swiper-container swiper-container4">
+                    <div class="swiper-wrapper">
+                        {{#foreach materialItemList.g}}
+                            <div class="swiper-slide ">
+                                <img src="{{imgSrc}}" alt="">
+                                <a href="{{imgSrc}}" download='img'></a>
+                                <span></span>
+                            </div>
+                        {{/foreach}}
+                    </div>
+
+                </div>
+
+                <a class="arrow-left" href="#"></a>
+                <a class="arrow-right" href="#"></a>
+                <div class="pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // 创建swiper
+        var mySwiper1 = new Swiper('.swiper-container1', {
+            paginationClickable: true,
+            updateOnImagesReady: true,
+            centeredSlides: true,
+            slidesPerView: 5,
+            watchActiveIndex: true,
+            resizeReInit: true,
+            onSwiperCreated: function (swiper) {
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+            },
+            onTouchEnd: function (swiper) {
+                $(".swiper-slide-visible").removeClass("swiper-slide-small")
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+
+            }
+        })
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            paginationClickable: true,
+            updateOnImagesReady: true,
+            centeredSlides: true,
+            slidesPerView: 5,
+            watchActiveIndex: true,
+            resizeReInit: true,
+            onSwiperCreated: function (swiper) {
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+            },
+            onTouchEnd: function (swiper) {
+                $(".swiper-slide-visible").removeClass("swiper-slide-small")
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+
+            }
+        })
+        var mySwiper3 = new Swiper('.swiper-container3', {
+            paginationClickable: true,
+            updateOnImagesReady: true,
+            centeredSlides: true,
+            slidesPerView: 5,
+            watchActiveIndex: true,
+            resizeReInit: true,
+            onSwiperCreated: function (swiper) {
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+            },
+            onTouchEnd: function (swiper) {
+                $(".swiper-slide-visible").removeClass("swiper-slide-small")
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+
+            }
+        })
+        var mySwiper4 = new Swiper('.swiper-container4', {
+            paginationClickable: true,
+            updateOnImagesReady: true,
+            centeredSlides: true,
+            slidesPerView: 5,
+            watchActiveIndex: true,
+            resizeReInit: true,
+            onSwiperCreated: function (swiper) {
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+            },
+            onTouchEnd: function (swiper) {
+                $(".swiper-slide-visible").removeClass("swiper-slide-small")
+
+                $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small");
+                $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small");
+
+            }
+        })
+
+        $(".big_img").hide();
+        // 滑动箭头
+        $('.arrow-left').on('click', function (e) {
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+            e.preventDefault();
+            mySwiper1.swipePrev();
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+
+        })
+        $('.arrow-right').on('click', function (e) {
+            e.preventDefault()
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+
+            mySwiper1.swipeNext()
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+
+        })
+
+
+        // 点击小图跳大图
+        $(".to-big1").on("click", function () {
+            console.log($(this).data('number'))
+            $(".big_img").show();
+            $(".small_img").hide();
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+            mySwiper1.swipeTo($(this).data('number'), 100, true);
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+        })
+        $(".to-big2").on("click", function () {
+            console.log($(this).data('number'))
+            $(".big_img").show();
+            $(".small_img").hide();
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+            mySwiper2.swipeTo($(this).data('number'), 100, true);
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+        })
+        $(".to-big3").on("click", function () {
+            console.log($(this).data('number'))
+            $(".big_img").show();
+            $(".small_img").hide();
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+            mySwiper3.swipeTo($(this).data('number'), 100, true);
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+        })
+        $(".to-big4").on("click", function () {
+            console.log($(this).data('number'))
+            $(".big_img").show();
+            $(".small_img").hide();
+            $(".swiper-slide-visible").removeClass("swiper-slide-small")
+            mySwiper4.swipeTo($(this).data('number'), 100, true);
+            $(".swiper-slide-active").next(".swiper-slide-visible").addClass("swiper-slide-small")
+            $(".swiper-slide-active").prev(".swiper-slide-visible").addClass("swiper-slide-small")
+        })
+
+        // 关闭按钮
+        $(".swiper-slide span:last-child").on("click", function () {
+            $(".big_img").hide();
+            $(".small_img").show();
+        })
+    </script>
+{{/if_path_material}}
+
+<!--了解蔻界页-->
+{{#if_path_about category.path}}
+    <div class="main_content aboutindex">
+        <div class="container-fluid cont">
+            <ul class="row cont__inner three_about">
+                <li class="el ">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <div class="bgcover"></div>
+                        </div>
+                        <div class="el__content">
+                            <div class="el__text">
+                                <div class='year2016'>
+                                    2016年，蔻界品牌诞生,品牌自成立之日起，始终秉承“让肌肤回归初生状态”为发展理念，集合多年LA温泉水研究成果和黑灵芝植物萃取技术，打造出专注于肌肤补水焕亮的纯天然产品；
+                                </div>
+                                <div class='year_line'>
+                                    <span class='year_more'></span>
+                                </div>
+
+                                <div class='year2018'>2018年，“黑灵芝温泉面膜”荣耀诞生，并作为蔻界品牌主打产品正式进入中国市场</div>
+
+                            </div>
+                            <div class="el__close-btn"></div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="el">
+
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <div class="bgcover"></div>
+                        </div>
+                        <div class="el__content">
+                            <div class="el__text">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">1750年前</div>
+                                        <div class="col-xs-12 col-md-10">著名水质学家Gesdin博士发现了LA ROCHE-POSAY温泉水；</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">1896年</div>
+                                        <div class="col-xs-12 col-md-10">
+                                            该温泉水对肌肤的补水疗效得到国家官方认证，成为欧洲当时唯一的治疗性温泉；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">1913年</div>
+                                        <div class="col-xs-12 col-md-10">
+                                            LA ROCHE -POSAY温泉水得到法国医学会肯定，成为欧洲皮肤科疾病温泉疗法之都；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">1975年</div>
+                                        <div class="col-xs-12 col-md-10">化学家Lavager和多名皮肤科专家成立LA
+                                            POCHE护肤品公司。研制，发展富含温泉水的护肤理疗产品，之后LA ROCHE –POSAY温泉水名声鹤起，LA
+                                            POCHE护肤品品牌也在欧洲市场快速发酵；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">1989年</div>
+                                        <div class="col-xs-12 col-md-10">欧莱雅集团正式将LA
+                                            POCHE公司收至旗下，至此，LA温泉水原料名扬海外，进入全球化进程；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">2013年</div>
+                                        <div class="col-xs-12 col-md-10">欧莱雅集团在香港成立温泉水研发萃取中心，并由香港康宝实业有限公司将技术成果引进中国大陆；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">2014年</div>
+                                        <div class="col-xs-12 col-md-10">
+                                            香港康宝在华成立稀有植物物种萃取研发中心，并在中国海南省白沙县引进珍贵天然植物物种——黑灵芝，通过对黑灵芝的多项实验，发现了黑灵芝多糖可显著促进细胞核内DNA合成能力的神奇秘密，高效调节核酸和蛋白质双向代谢平衡，而这种平衡，可增加细胞的分裂代数，是使人类容颜永驻，肌肤青春饱满的关键因素。
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">2015年</div>
+                                        <div class="col-xs-12 col-md-10">
+                                            香港康宝实业有限公司正式从集团独立，把LA温泉水精华融合黑灵芝萃取技术及多年临床实验结果带到了内地护肤品市场，将产品销售通路转向中国内地；
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-2">2016年</div>
+                                        <div class="col-xs-12 col-md-10">
+                                            蔻界品牌诞生，品牌自成立之日起，始终秉承“让肌肤回归初生状态”为发展理念，集合多年LA温泉水研究成果和黑灵芝植物萃取技术，打造出专注于肌肤补水焕亮的纯天然产品，
+                                            “黑灵芝温泉面膜”应运而生，并作为蔻界品牌主打产品正式进入中国市场。
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="el__close-btn"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="el">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <div class="bgcover"></div>
+                        </div>
+                        <div class="el__content">
+                            <div class="el__text">
+
+                                <div class="container-fluid carousel_change">
+                                    <a class="carousel_change_btn  carousel-control" href="#carousel-example-generic"
+                                       role="button" data-slide="prev">
+                                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                                        <!--<span class="sr-only">Previous</span>-->
+                                    </a>
+                                    <a class="carousel_change_btn carousel-control turnr"
+                                       href="#carousel-example-generic" role="button" data-slide="next">
+                                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                                        <!--<span class="sr-only">Next</span>-->
+                                    </a>
+
+                                    <div id="carousel-example-generic" class="carousel slide">
+                                        <ol class="carousel-indicators">
+                                            {{#foreach list}}
+                                                {{#if_arr_first this}}
+                                                    <li data-target="#carousel-example-generic"
+                                                        data-slide-to="{{@index}}"
+                                                        class="active"></li>
+                                                {{else}}
+                                                    <li data-target="#carousel-example-generic"
+                                                        data-slide-to="{{@index}}"></li>
+                                                {{/if_arr_first}}
+                                            {{/foreach}}
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+
+                                        <div class="carousel-inner" role="listbox">
+
+
+                                            {{#foreach list}}
+                                                {{#if_arr_first this}}
+                                                <ul class="item active row">
+                                                {{else}}
+                                                <ul class="item row">
+                                                {{/if_arr_first}}
+                                                {{#foreach this}}
+                                                    <li class="col-xs-6 col-md-4">
+                                                        <img src="{{imgSrc}}" alt="">
+                                                    </li>
+                                                {{/foreach}}
+
+                                                {{#if_arr_first this}}
+                                                </ul>
+                                                {{else}}
+                                                </ul>
+                                                {{/if_arr_first}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class='arrow-box'></div>-->
+                            <div class="el__close-btn"></div>
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+{{/if_path_about}}
+
+
+
+<!--以下是静态页面-->
+
+<!--产品-->
+{{#if_path_product category.path}}
+    <div class="main_content productindex">
+        <div class="container-fluid cont">
+            <ul class="row cont__inner">
+
+                <li class="four el">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product01.jpg" alt="">
+                            <div class="kj_icon"></div>
+                        </div>
+                        <div class="el__content">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product01.jpg" alt="">
+
+                            <div class="el__text">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">核心成分</p>
+                                        <p class="col-xs-12 ">野生黑灵芝、海茴香干细胞、生物胶糖-1、铁皮石斛、天山雪莲、燕窝提取物</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">功效</p>
+                                        <p class="col-xs-12 ">
+                                            在家也能享受的肌肤水分沐浴，增强脸部水分和肌肤活力，使肌肤水润，光泽透亮。温泉水原液精华与珍贵物种野生黑灵芝的鲜活精粹科学配比，渗入肌肤层，有效锁水不流失：融汇多种天然专利原料，释放深层修护、亮肤功效、淡化干纹细纹、收细粗大毛孔，同时在肌肤表层形成天然保护膜，使脸部倍感自然水润，柔嫩如初，见证肌肤水感焕亮。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">使用方法</p>
+                                        <p class="col-xs-12 ">1、洁面后，取出面膜并以眼部切口为准，展开敷在脸上，取下外层珠光膜：</p>
+                                        <p class="col-xs-12 ">2、轻按眼部各处使面膜服帖，放松精神，享受15-20分钟，让肌肤充分吸收面膜精华液：</p>
+                                        <p class="col-xs-12 ">3、取下面膜，用指腹轻柔按摩脸部，帮助剩余精华液被充分吸收后用清水洗净即可。</p>
+
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 ">规格：25ML*10片／盒</p>
+                                        <p class="col-xs-12 ">化妆品生产许可证：粤妆20160471</p>
+                                        <p class="col-xs-12 ">产地：广东广州</p>
+                                        <p class="col-xs-12 ">保质期：三年</p>
+                                    </div>
+
+                                </div>
+                                <div class="el__close-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="four el">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product02.jpg" alt="">
+                            <div class="kj_icon"></div>
+                        </div>
+                        <div class="el__content">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product02.jpg" alt="">
+
+                            <div class="el__text">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">基因生物工程</p>
+                                        <p class="col-xs-12 ">通过基因生物工程技术，将人体原有的营养物质在体外大
+                                            量克隆复制，加入产品中，给予皮肤随着年纪增长而流失的营养；</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">脂质体包裹技术</p>
+                                        <p class="col-xs-12 ">
+                                            运用脂质体包裹技术，将营养成分用微脂囊包裹住，保持活性，并在进入到皮肤后层层释放，到达深层吸收，替换基底层受损和病变坏死的细胞；</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">单体成分提纯</p>
+                                        <p class="col-xs-12 ">只提取物质中最有营养价值的部分，避免其他杂质的干扰；</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">纳米小分子技术</p>
+                                        <p class="col-xs-12 ">将产品里的营养物质纳米化，加速吸收。</p>
+                                    </div>
+
+
+                                </div>
+                                <div class="el__close-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="four el">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product03.jpg" alt="">
+                            <div class="kj_icon"></div>
+                        </div>
+                        <div class="el__content">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product03.jpg" alt="">
+
+                            <div class="el__text">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">生物糖胶-1：EP0805850B1，欧洲专利</p>
+                                        <p class="col-xs-12 ">皮肤的保湿剂，去皱剂，肌肤修复和肤感调节剂</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">欧蓍草：US20100209407，美国专利</p>
+                                        <p class="col-xs-12 ">敏感肌的福星，超强免敏因子，提升肌肤吸收疗效</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">菊 苣：FR1453554，法国专利</p>
+                                        <p class="col-xs-12 ">加速皮肤代谢，净化皮肤改善敏感肌肤，补水提亮</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">海茴香：US8088742B2，美国专利</p>
+                                        <p class="col-xs-12 ">被喻为21世纪最珍稀的保养成分，强化细胞自我更新，抵抗皱纹恢复肌肤弹性，改善面部气血</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">雪莲花：CN201510784818·1，中国专利</p>
+                                        <p class="col-xs-12 ">抗炎、组织修复和抗超氧化物自由基的功效；美容、祛斑、延缓皮肤衰老</p>
+                                    </div>
+
+
+                                </div>
+                                <div class="el__close-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="four el">
+                    <div class="el__overflow">
+                        <div class="el__bg">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product04.jpg" alt="">
+                            <div class="kj_icon"></div>
+                        </div>
+                        <div class="el__content">
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/product04.jpg" alt="">
+
+                            <div class="el__text">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">野生黑灵芝</p>
+                                        <p class="col-xs-12 ">
+                                            黑灵芝可以提供丰富的人体必需氨基酸，是皮肤新陈代谢必不可少的原材料。珍贵黑灵芝促进皮肤血液循环，增加皮肤营养给水平，提升皮肤细胞抗氧化酶活力，抑制皮质过氧化的发生，有效的保护皮肤角质层，防止皮肤细胞角质层增厚，同时还具有抗皱，消炎，嫩肤，消除色斑，洁肤增白等功能，让美丽从内而外。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">海茴香干细胞</p>
+                                        <p class="col-xs-12 ">
+                                            被喻为21世纪最珍稀的保养成分，海茴香干细胞的神奇功能：肌肤抗氧化，强化细胞自我更新，抵抗皱纹恢复肌肤弹性，收缩毛孔，改善面部气血。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">生物糖胶-1</p>
+                                        <p class="col-xs-12 ">
+                                            生物糖胶是一种源于中国渤海海域的生物多糖，因其分子中存在大量的岩藻糖通常称为岩藻聚糖，皮肤的保湿剂，去皱剂，肌肤修复和肤感调节剂。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">铁皮石斛</p>
+                                        <p class="col-xs-12 ">
+                                            铁皮石斛中富含的石斛多糖，石斛碱，氨基酸，微量元素等，会作用于人体各个器官，调节内分泌，恢复人体机能延缓衰老速度，让纤维细胞重生，补充胶原蛋白，使皮肤变得无暇，脸色变得红润。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">天山雪莲花</p>
+                                        <p class="col-xs-12 ">
+                                            雪莲具抗炎、组织修复和抗超氧化物自由基的功效，对防御由生理或非生理因素(如疾病)诱发自由基长期慢功效，在内服时表现为保健和增强免疫功能，外用时可达到美容、祛斑、延缓皮肤衰老的目的。</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-xs-12 font_b">燕窝提取物</p>
+                                        <p class="col-xs-12 ">
+                                            燕窝中富含的表皮生长因子在体内体外都对多种组织细胞具有强烈的促分裂作用，能高效修复肌肤，消除皱纹抗衰老，淡化色斑，滋润补水，因此含有大量表皮生长因子的燕窝，是美容护肤的佳品，是诸多明星政要的必备佳品。</p>
+                                    </div>
+                                </div>
+                                <div class="el__close-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+{{/if_path_product}}
+
+<!--联系我们-->
+{{#if_path_contact category.path}}
+    <div class="main_content aboutindex contact">
+        <div class="contact_box container-fluid">
+
+            <div class="row">
+                <ul class="col-xs-12 col-md-5 contact_info">
+                    <li>
+                        <div>
+                            <img src="/themes/{{siteInfo.theme}}/assets/images/contact.png" alt="">
+                            <p>上海翊索生物科技有限公司</p>
+                            <p>地址：上海市浦东新区商城路506号新梅联合广场B座32楼</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><img src="/themes/{{siteInfo.theme}}/assets/images/call.png" alt="">
+                            <p>招商热线：021-12345678</p>
+                            <p>全国统一服务热线：021-12345678</p></div>
+
+                    </li>
+                    <li>
+                        <div><img src="/themes/{{siteInfo.theme}}/assets/images/write.png" alt="">
+                            <p>邮箱: cknkcncnn@cnknconvo.com</p></div>
+                    </li>
+                </ul>
+                <div class="col-xs-12 col-md-7  contact_map" id="dituContent">222</div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <script>
+        //创建和初始化地图函数：
+        function initMap() {
+            createMap();//创建地图
+            setMapEvent();//设置地图事件
+            addMapControl();//向地图添加控件
+            addMarker();//向地图中添加marker
+        }
+
+        //创建地图函数：
+        function createMap() {
+            var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+            var point = new BMap.Point(121.529906, 31.244586);//定义一个中心点坐标
+            map.centerAndZoom(point, 15);//设定地图的中心点和坐标并将地图显示在地图容器中
+            window.map = map;//将map变量存储在全局
+        }
+
+        //地图事件设置函数：
+        function setMapEvent() {
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+        }
+
+        //地图控件添加函数：
+        function addMapControl() {
+            //向地图中添加缩放控件
+            var ctrl_nav = new BMap.NavigationControl({
+                anchor: BMAP_ANCHOR_TOP_LEFT,
+                type: BMAP_NAVIGATION_CONTROL_ZOOM
+            });
+            map.addControl(ctrl_nav);
+            //向地图中添加缩略图控件
+            var ctrl_ove = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 0});
+            map.addControl(ctrl_ove);
+            //向地图中添加比例尺控件
+            var ctrl_sca = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
+            map.addControl(ctrl_sca);
+        }
+
+        //标注点数组
+        var markerArr = [{
+            title: "新梅联合广场",
+            content: "地址：上海市浦东新区商城路506号新梅联合广场B座32楼",
+            point: "121.522746|31.235439",
+            isOpen: 0,
+            icon: {w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5}
+        }
+        ];
+
+        //创建marker
+        function addMarker() {
+            for (var i = 0; i < markerArr.length; i++) {
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0, p1);
+                var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point, {icon: iconImg});
+                var iw = createInfoWindow(i);
+                var label = new BMap.Label(json.title, {"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)});
+                marker.setLabel(label);
+                map.addOverlay(marker);
+                label.setStyle({
+                    borderColor: "#808080",
+                    color: "#333",
+                    cursor: "pointer"
+                });
+
+                (function () {
+                    var index = i;
+                    var _iw = createInfoWindow(i);
+                    var _marker = marker;
+                    _marker.addEventListener("click", function () {
+                        this.openInfoWindow(_iw);
+                    });
+                    _iw.addEventListener("open", function () {
+                        _marker.getLabel().hide();
+                    })
+                    _iw.addEventListener("close", function () {
+                        _marker.getLabel().show();
+                    })
+                    label.addEventListener("click", function () {
+                        _marker.openInfoWindow(_iw);
+                    })
+                    if (!!json.isOpen) {
+                        label.hide();
+                        _marker.openInfoWindow(_iw);
+                    }
+                })()
+            }
+        }
+
+        //创建InfoWindow
+        function createInfoWindow(i) {
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+            return iw;
+        }
+
+        //创建一个Icon
+        function createIcon(json) {
+            var icon = new BMap.Icon("/themes/{{siteInfo.theme}}/assets/images/map_icon.png", new BMap.Size(json.w, json.h), {
+                imageOffset: new BMap.Size(-json.l, -json.t),
+                infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+                offset: new BMap.Size(json.x, json.h)
+            })
+            return icon;
+        }
+
+        initMap();//创建和初始化地图
+    </script>
+{{/if_path_contact}}
